@@ -29,7 +29,7 @@ module Analgesic
   # reload_attributes
   #
   module DatabagMagic
-    def reload_attributes(attribute_key_name:, data_bag_collection: 'hosts', data_bag_id: node['fqdn'], attribute_type_from: 'default', attribute_type_to: 'force_default')
+    def load_attributes(attribute_key_name:, data_bag_collection: 'hosts', data_bag_id: node['fqdn'], attribute_type_from: 'default', attribute_type_to: 'force_default')
       # checking data_bag
       attributes_types = %w(default force_default override force_override)
       begin
@@ -39,17 +39,17 @@ module Analgesic
           node.send(attribute_type_to)[attribute_key_name] = data_new
           run_context.loaded_attributes.each do |attribute_file|
             puts "Files attributes: #{ attribute_file } =>> #{ attribute_file.split('::')[1] }"
-            puts "Current cookbook: #{ current_cookbook }"
-            @data_recompiled = node.from_file(run_context.resolve_attribute(current_cookbook, attribute_file.split('::')[1]))
+            puts "Current cookbook: #{ cookbook_name }"
+            @data_recompiled = node.from_file(run_context.resolve_attribute(cookbook_name, attribute_file.split('::')[1]))
           end
           data_recompiled_reloaded = Chef::Mixin::DeepMerge.hash_only_merge!(@data_recompiled, data_cfg[attribute_key_name])
           node.send(attribute_type_to)[attribute_key_name] = data_recompiled_reloaded
         else
           raise "Fatal! You want use undeclared attributes type: #{ attribute_type_from } #{ attribute_type_to }\n \
-                You must use only one from [default, force_default, overrice, force_verride]"
+                 You must use only one from [default, force_default, overrice, force_verride]"
         end
-      rescue StandardError
-        puts "There's something very wrong with us... We get out!"
+      rescue StandardError => e
+        raise e
       end
     end
   end

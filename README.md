@@ -1,4 +1,3 @@
 # analgesic
 
-TODO: Enter the cookbook description here.
-
+Libraries collection with painkiller helpers :)

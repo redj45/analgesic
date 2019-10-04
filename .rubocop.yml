@@ -1,0 +1,609 @@
+AllCops:
+  TargetRubyVersion: 2.7
+
+Encoding:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+# length cops
+# Commonly used screens these days easily fit more than 80 characters.
+LineLength:
+  Enabled: true
+  Max: 200
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+MethodLength:
+  Enabled: true
+  Max: 20
+BlockLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 1500
+Metrics/CyclomaticComplexity:
+  Enabled: false
+PerceivedComplexity:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  Enabled: true
+Naming/AccessorMethodName:
+  Enabled: true
+Style/Alias:
+  Enabled: true
+Layout/AlignArray:
+  Enabled: true
+Layout/AlignHash:
+  Enabled: true
+AlignParameters:
+  Enabled: true
+
+Style/AndOr:
+  Enabled: true
+Style/ArrayJoin:
+  Enabled: true
+# some names are not ascii and this prevents copyright comments
+Style/AsciiComments:
+  Enabled: false
+Naming/AsciiIdentifiers:
+  Enabled: true
+Style/Attr:
+  Enabled: true
+Style/BeginBlock:
+  Enabled: true
+Style/BarePercentLiterals:
+  Enabled: true
+Style/BlockComments:
+  Enabled: true
+Layout/BlockEndNewline:
+  Enabled: true
+Style/BlockDelimiters:
+  Enabled: true
+Style/BracesAroundHashParameters:
+  Enabled: true
+Style/CaseEquality:
+  Enabled: true
+Layout/CaseIndentation:
+  Enabled: true
+Style/CharacterLiteral:
+  Enabled: true
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+Style/ClassAndModuleChildren:
+  Enabled: true
+
+Style/ClassCheck:
+  Enabled: true
+Style/ClassMethods:
+  Enabled: true
+Style/ClassVars:
+  Enabled: true
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+Style/ColonMethodCall:
+  Enabled: true
+Style/CommandLiteral:
+  Enabled: true
+Style/CommentAnnotation:
+  Enabled: true
+Layout/CommentIndentation:
+  Enabled: true
+Style/ConditionalAssignment:
+  Enabled: true
+Naming/ConstantName:
+  Enabled: true
+Style/DefWithParentheses:
+  Enabled: true
+# consistent hash key/value checks
+Style/PreferredHashMethods:
+  Enabled: true
+Documentation:
+  Enabled: true
+# when iterating a fixed number of times this is much easier to read
+Style/EachForSimpleLoop:
+  Enabled: true
+# a case statement without a condition is just an if statement
+Style/EmptyCaseCondition:
+  Enabled: true
+# == 0 is more performant than .zero? and .zero? also introduced several regressions
+Style/NumericPredicate:
+  Enabled: true
+  EnforcedStyle: comparison
+
+# this is bad %w(something     another_thing   one_more)
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+Layout/DotPosition:
+  Enabled: true
+Style/EachWithObject:
+  Enabled: true
+Layout/ElseAlignment:
+  Enabled: true
+Style/EmptyElse:
+  Enabled: true
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+Layout/EmptyLines:
+  Enabled: true
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+Style/EmptyLiteral:
+  Enabled: true
+Style/EndBlock:
+  Enabled: true
+Style/EvenOdd:
+  Enabled: true
+Layout/ExtraSpacing:
+  Enabled: true
+# file names don't matter in cookbooks
+Naming/FileName:
+  Enabled: false
+# This comes with changing the ruby target to 2.3+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Layout/InitialIndentation:
+  Enabled: true
+Layout/IndentFirstArgument:
+  Enabled: true
+Lint/FlipFlop:
+  Enabled: true
+Style/For:
+  Enabled: true
+Style/FormatString:
+  Enabled: true
+Style/GlobalVars:
+  Enabled: true
+# guardclause sacrifices ease of readability for consistency at times
+Style/GuardClause:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: true
+Style/IfInsideElse:
+  Enabled: true
+Style/IfUnlessModifier:
+  Enabled: true
+Style/IfWithSemicolon:
+  Enabled: true
+Layout/IndentationConsistency:
+  Enabled: true
+Layout/IndentationWidth:
+  Enabled: true
+Style/IdenticalConditionalBranches:
+  Enabled: true
+Layout/IndentFirstArrayElement:
+  Enabled: true
+Layout/IndentAssignment:
+  Enabled: true
+Layout/IndentFirstHashElement:
+  Enabled: true
+Style/InfiniteLoop:
+  Enabled: true
+Style/Lambda:
+  Enabled: true
+Style/LambdaCall:
+  Enabled: true
+Layout/LeadingCommentSpace:
+  Enabled: true
+Style/LineEndConcatenation:
+  Enabled: true
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+Style/MethodDefParentheses:
+  Enabled: true
+Naming/MethodName:
+  Enabled: true
+Style/ModuleFunction:
+  Enabled: true
+Style/MultilineBlockChain:
+  Enabled: true
+Layout/MultilineBlockLayout:
+  Enabled: true
+Style/MultilineIfThen:
+  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+Layout/MultilineOperationIndentation:
+  Enabled: true
+Style/MultilineTernaryOperator:
+  Enabled: true
+Style/MutableConstant:
+  Enabled: true
+Style/NegatedIf:
+  Enabled: true
+Style/NegatedWhile:
+  Enabled: true
+Style/NestedModifier:
+  Enabled: true
+Style/NestedParenthesizedCalls:
+  Enabled: true
+Style/NestedTernaryOperator:
+  Enabled: true
+Style/Next:
+  Enabled: true
+Style/NilComparison:
+  Enabled: true
+Style/NonNilCheck:
+  Enabled: true
+Style/Not:
+  Enabled: true
+# Underscores in numbers are unnecessary, especially for port numbers where they are unexpected
+Style/NumericLiterals:
+  Enabled: false
+Style/OneLineConditional:
+  Enabled: true
+Naming/BinaryOperatorParameterName:
+  Enabled: true
+Style/OptionalArguments:
+  Enabled: true
+Style/ParallelAssignment:
+  Enabled: true
+Style/ParenthesesAroundCondition:
+  Enabled: true
+Style/PercentQLiterals:
+  Enabled: true
+Style/PerlBackrefs:
+  Enabled: true
+Naming/PredicateName:
+  Enabled: true
+Style/Proc:
+  Enabled: true
+Style/RaiseArgs:
+  Enabled: true
+Style/RedundantBegin:
+  Enabled: true
+Style/RedundantException:
+  Enabled: true
+Style/RedundantFreeze:
+  Enabled: true
+Style/RedundantParentheses:
+  Enabled: true
+Style/RedundantReturn:
+  Enabled: true
+Style/RedundantSelf:
+  Enabled: true
+Style/RegexpLiteral:
+  Enabled: true
+  EnforcedStyle: mixed
+  AllowInnerSlashes: false
+Layout/RescueEnsureAlignment:
+  Enabled: true
+Style/RescueModifier:
+  Enabled: true
+Style/SelfAssignment:
+  Enabled: true
+Style/Semicolon:
+  Enabled: true
+Style/SignalException:
+  Enabled: true
+Style/SingleLineBlockParams:
+  Enabled: true
+Style/SingleLineMethods:
+  Enabled: true
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+# maintain the previous array behavior in previous cookstyle releases
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%i': ()
+    '%I': ()
+    '%q': ()
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': ()
+    '%W': ()
+    '%x': ()
+
+# backwards conditions are hard to read
+Style/YodaCondition:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+Layout/SpaceAfterComma:
+  Enabled: true
+Layout/SpaceAfterMethodName:
+  Enabled: true
+Layout/SpaceAfterNot:
+  Enabled: true
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+Layout/SpaceBeforeComma:
+  Enabled: true
+Layout/SpaceBeforeComment:
+  Enabled: true
+Layout/SpaceBeforeSemicolon:
+  Enabled: true
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+Layout/SpaceAroundKeyword:
+  Enabled: true
+Layout/SpaceAroundOperators:
+  Enabled: true
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+Layout/SpaceInsideParens:
+  Enabled: true
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+Layout/SpaceInsideStringInterpolation:
+  Enabled: true
+  EnforcedStyle: space
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Enabled: true
+# enforce lf to avoid failures on Windows systems
+Layout/EndOfLine:
+  Enabled: true
+  EnforcedStyle: lf
+# Avoid weird empty lines in an argument
+Layout/EmptyLinesAroundArguments:
+  Enabled: true
+
+Style/SpecialGlobalVars:
+  Enabled: true
+Style/StabbyLambdaParentheses:
+  Enabled: true
+Style/StringLiterals:
+  Enabled: true
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+Style/StructInheritance:
+  Enabled: true
+Style/SymbolLiteral:
+  Enabled: true
+Style/SymbolProc:
+  Enabled: true
+Layout/Tab:
+  Enabled: true
+Layout/TrailingBlankLines:
+  Enabled: true
+Style/TrailingCommaInArguments:
+  Enabled: true
+# https://github.com/chef/cookstyle/pull/5
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+# https://github.com/chef/cookstyle/pull/5
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+Layout/TrailingWhitespace:
+  Enabled: true
+Style/TrivialAccessors:
+  Enabled: true
+Style/UnlessElse:
+  Enabled: true
+Style/UnneededCapitalW:
+  Enabled: true
+Style/UnneededInterpolation:
+  Enabled: true
+Style/UnneededPercentQ:
+  Enabled: true
+Style/TrailingUnderscoreVariable:
+  Enabled: true
+Style/VariableInterpolation:
+  Enabled: true
+Naming/VariableName:
+  Enabled: true
+Style/WhenThen:
+  Enabled: true
+Style/WhileUntilDo:
+  Enabled: true
+Style/WhileUntilModifier:
+  Enabled: true
+Style/WordArray:
+  Enabled: true
+Style/ZeroLengthPredicate:
+  Enabled: true
+# Bad: `bar = [foo.min, foo.max]`. Good: bar = foo.minmax
+Style/MinMax:
+  Enabled: true
+# this avoids very verbose code for no reason
+Style/RedundantConditional:
+  Enabled: true
+# Avoid poorly formatted methods
+Style/TrailingBodyOnMethodDefinition:
+  Enabled: true
+# get people on a much simpler ruby 2.4 way of doing things
+Style/UnpackFirst:
+  Enabled: true
+
+Metrics/BlockNesting:
+  Enabled: true
+Metrics/LineLength:
+  Enabled: true
+Metrics/MethodLength:
+  Enabled: true
+Metrics/ParameterLists:
+  Enabled: true
+
+Lint/AmbiguousOperator:
+  Enabled: true
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+Lint/AssignmentInCondition:
+  Enabled: true
+Layout/BlockAlignment:
+  Enabled: true
+Lint/CircularArgumentReference:
+  Enabled: true
+Layout/ConditionPosition:
+  Enabled: true
+Lint/Debugger:
+  Enabled: true
+Layout/DefEndAlignment:
+  Enabled: true
+Lint/DeprecatedClassMethods:
+  Enabled: true
+Lint/DuplicateMethods:
+  Enabled: true
+Lint/DuplicatedKey:
+  Enabled: true
+Lint/EachWithObjectArgument:
+  Enabled: true
+Lint/ElseLayout:
+  Enabled: true
+Lint/EmptyEnsure:
+  Enabled: true
+Lint/EmptyInterpolation:
+  Enabled: true
+Layout/EndAlignment:
+  Enabled: true
+Lint/EndInMethod:
+  Enabled: true
+Lint/EnsureReturn:
+  Enabled: true
+Security/Eval:
+  Enabled: true
+Lint/FloatOutOfRange:
+  Enabled: true
+Lint/FormatParameterMismatch:
+  Enabled: true
+Lint/HandleExceptions:
+  Enabled: true
+Lint/ImplicitStringConcatenation:
+  Enabled: true
+Lint/IneffectiveAccessModifier:
+  Enabled: true
+Lint/LiteralAsCondition:
+  Enabled: true
+Lint/LiteralInInterpolation:
+  Enabled: true
+Lint/Loop:
+  Enabled: true
+Lint/NestedMethodDefinition:
+  Enabled: true
+Lint/NextWithoutAccumulator:
+  Enabled: true
+Lint/NonLocalExitFromIterator:
+  Enabled: true
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+Lint/RandOne:
+  Enabled: true
+Lint/RequireParentheses:
+  Enabled: true
+Lint/RescueException:
+  Enabled: true
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+Lint/StringConversionInInterpolation:
+  Enabled: true
+Lint/UnderscorePrefixedVariableName:
+  Enabled: true
+Lint/UnneededCopDisableDirective:
+  Enabled: true
+Lint/UnusedBlockArgument:
+  Enabled: true
+Lint/UnusedMethodArgument:
+  Enabled: true
+Lint/UnreachableCode:
+  Enabled: true
+Lint/UselessAccessModifier:
+  Enabled: true
+Lint/UselessAssignment:
+  Enabled: true
+Lint/UselessComparison:
+  Enabled: true
+Lint/UselessElseWithoutRescue:
+  Enabled: true
+Lint/UselessSetterCall:
+  Enabled: true
+Lint/Void:
+  Enabled: true
+# avoid case statements where the 2nd 'when' would never fire
+Lint/DuplicateCaseCondition:
+  Enabled: true
+# empty expressions serve no purpose
+Lint/EmptyExpression:
+  Enabled: true
+# when in a case statement should always do something
+Lint/EmptyWhen:
+  Enabled: true
+# %w('something') is almost always a typo
+Lint/PercentStringArray:
+  Enabled: true
+# %w(:something) should be a string not a symbol
+Lint/PercentSymbolArray:
+  Enabled: true
+# if you rescue Exception, then rescue say StandardError you're gonna have a bad time
+Lint/ShadowedException:
+  Enabled: true
+# We're on modern ruby so let's assume Integer everywhere
+Lint/UnifiedInteger:
+  Enabled: true
+# It's easier to read a simple .each and they're faster
+Lint/RedundantWithIndex:
+  Enabled: true
+# Catches when a user single quotes a string with interpolation
+Lint/InterpolationCheck:
+  Enabled: true
+# Avoid ruby deprecation warnings
+Lint/UriRegexp:
+  Enabled: true
+# :true or :false seems like a horrible idea
+Lint/BooleanSymbol:
+  Enabled: true
+# catches people writing a regex check wrong
+Lint/RegexpInCondition:
+  Enabled: true
+# Avoids pointless / complex code
+Lint/RedundantWithObject:
+  Enabled: true
+# avoid requiring things that come for free
+Lint/UnneededRequireStatement:
+  Enabled: true
+# don't shadow arguments
+Lint/ShadowedArgument:
+  Enabled: true
+# find orphaned empty comments
+Layout/EmptyComment:
+  Enabled: true
+# warn on deprecated functionality
+Lint/BigDecimalNew:
+  Enabled: true
+# remove bogus rubocop comments. We already enabled Disable directives
+Lint/UnneededCopEnableDirective:
+  Enabled: true
+
+# This results in very confusing code to read with little perf benefit
+Performance/Casecmp:
+  Enabled: false
+Style/RedundantSortBy:
+  Enabled: true
+Style/Sample:
+  Enabled: true
+Performance/UriDefaultParser:
+  Enabled: true
+# simplify how you get the min or max of an array
+Style/UnneededSort:
+  Enabled: true
+
+# There's no reason to have a gem listed twice
+Bundler/DuplicatedGem:
+  Enabled: true
+# Users really shouldn't have a gem, but if they do they should do it securely
+Bundler/InsecureProtocolSource:
+  Enabled: true

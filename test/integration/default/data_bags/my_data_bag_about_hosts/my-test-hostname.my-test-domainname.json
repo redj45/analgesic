@@ -1,0 +1,7 @@
+{
+  "id":"my-test-hostname.my-test-domainname",
+  "test_attrs": {
+    "me":"99",
+    "we":["foo","bar"]
+  }
+}
